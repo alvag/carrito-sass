@@ -1,4 +1,50 @@
-body {
+// Variables
+$primary-color: #33c3f0;
+$white-color: #ffffff;
+$gray-color: #e1e1e1;
+
+.contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.oculto {
+    display: none;
+}
+
+.header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        padding: 1.4rem 0;
+    }
+}
+
+.carrito-compras {
+    position: relative;
+
+    &:hover .contenido {
+        display: block;
+        position: absolute;
+        right: 0;
+        background-color: $gray-color;
+        padding: 1rem;
+        max-width: 400px;
+
+        img {
+            max-width: 150px;
+        }
+
+        .boton {
+            background-color: $primary-color;
+            padding: 0.5rem 1rem;
+            margin-top: 1rem;
+            display: block;
+            text-align: center;
+            color: $white-color;
+            text-decoration: none;
+        }
+    }
 }
