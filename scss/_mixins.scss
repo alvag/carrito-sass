@@ -18,6 +18,10 @@
     background-position: center center;
 }
 
+@mixin gradient($startColor, $endColor) {
+    background: linear-gradient(to right, $startColor 0%, $endColor 100%);
+}
+
 @mixin mobile {
     @media only screen and (min-width: #{$mobile}) {
         @content;
