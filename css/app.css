@@ -72,8 +72,10 @@ body {
     .hero .contenido-hero p {
       font-size: 1.2rem; }
     .hero .contenido-hero form {
-      position: relative;
-      width: 40%; }
+      position: relative; }
+      @media only screen and (min-width: 768px) {
+        .hero .contenido-hero form {
+          width: 40%; } }
       .hero .contenido-hero form input[type='submit'] {
         background-image: url("../img/lupa.png");
         background-repeat: no-repeat;

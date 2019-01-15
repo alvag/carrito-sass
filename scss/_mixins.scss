@@ -17,3 +17,21 @@
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+@mixin mobile {
+    @media only screen and (min-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
