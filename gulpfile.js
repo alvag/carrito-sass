@@ -1,18 +1,19 @@
-const gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    autoprefixer = require('gulp-autoprefixer');
+var { watch, series, src, dest } = require('gulp');
+var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('sass', () => {
-    gulp.src('scss/app.scss')
+function sassAndAuto() {
+    return src('scss/app.scss')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
         .pipe(sass({
             includePaths: ['scss']
-        }));
-});
+        }))
+        .pipe(dest('css'));
+}
 
-gulp.task('watch', ['sass'], () => {
-    gulp.watch(['scss/*.scss'], ['sass']);
-});
+exports.sassAndAuto = sassAndAuto;
+exports.default = series(sassAndAuto);
+watch(['scss/*.scss'], series(sassAndAuto));
