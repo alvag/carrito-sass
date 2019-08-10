@@ -24,6 +24,10 @@ body {
     display: none;
 }
 
+.centrado {
+    text-align: center;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -57,7 +61,7 @@ body {
 
 .hero {
     @include background-image('../img/hero.jpg');
-    background-size: conver;
+    background-size: cover;
     color: $white-color;
     min-height: 24rem;
     display: flex;
@@ -137,12 +141,99 @@ body {
             &.icono1 {
                 @include background-image('../img/icono1.png');
             }
+
             &.icono2 {
                 @include background-image('../img/icono2.png');
             }
+
             &.icono3 {
                 @include background-image('../img/icono3.png');
             }
         }
+    }
+}
+
+.cursos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .curso {
+        flex: 0 1 100%;
+        border: 1px solid darken($gray-color, 10);
+        margin-bottom: 1rem;
+
+        @include tablet() {
+            flex: 0 1 calc(33% - 1rem);
+        }
+
+        @include desktop() {
+            flex: 0 1 calc(25% - 1rem);
+        }
+
+        .imagen-curso {
+            width: 100%;
+        }
+    }
+}
+
+.info-curso {
+    padding: 1rem;
+
+    h4 {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .precio {
+        display: flex;
+        justify-content: space-between;
+
+        .regular {
+            text-decoration: line-through;
+            color: red;
+        }
+
+        .oferta {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: green;
+        }
+    }
+
+    .boton {
+        @include boton($secondary-color)
+    }
+}
+
+.footer {
+    border-top: 1px solid darken($gray-color, 10);
+    margin-top: 1rem;
+    padding-top: 2rem;
+
+    .contenedor-footer {
+        display: flex;
+        flex-direction: column;
+
+        @include mobile() {
+            flex-direction: row;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    @include desktop() {
+        flex: 0 1 calc(30% - 1rem);
+    }
+
+    a {
+        color: $black-color;
+        text-decoration: none;
+        margin-bottom: 1.5rem;
     }
 }
